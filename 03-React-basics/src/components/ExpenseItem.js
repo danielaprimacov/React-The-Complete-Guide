@@ -1,3 +1,5 @@
+import React from "react";
+
 import ExpsenseDate from "./ExpenseDate";
 import Card from "./Card";
 import "./ExpenseItem.css";
