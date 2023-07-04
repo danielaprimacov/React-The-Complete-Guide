@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from "react";
 
-import NewExpense from './components/NewExpense/NewExpense';
+import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
 const App = () => {
@@ -25,11 +25,11 @@ const App = () => {
       date: new Date(2023, 4, 22),
     },
   ];
-  
-  const addExpenseHandler = expense => {
+
+  const addExpenseHandler = (expense) => {
     console.log("In App.js");
     console.log(expense);
-  }
+  };
 
   // return React.createElement(
   //   "div",
@@ -47,6 +47,6 @@ const App = () => {
       </div>
     </div>
   );
-}
+};
 
 export default App;
