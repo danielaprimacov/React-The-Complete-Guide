@@ -46,26 +46,38 @@ const ExpenseForm = () => {
     // });
   };
 
-  const inputChangeHandler = (identifier, value) => {
-    if (identifier === "title") {
-      setEnteredTitle(value);
-    } else if (identifier === "date") {
-      setEnteredDate(value);
-    } else {
-      setEnteredAmount(value);
-    }
+  // const inputChangeHandler = (identifier, value) => {
+  //   if (identifier === "title") {
+  //     setEnteredTitle(value);
+  //   } else if (identifier === "date") {
+  //     setEnteredDate(value);
+  //   } else {
+  //     setEnteredAmount(value);
+  //   }
+  // };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate),
+    };
+    
   };
 
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
           <input
             type="text"
-            onChange={(event) =>
-              inputChangeHandler("title", event.target.value)
-            }
+            // onChange={(event) =>
+            //   inputChangeHandler("title", event.target.value)
+            //}
+            onChange={titleChangeHandler}
           />
         </div>
         <div className="new-expense__control">
@@ -74,9 +86,10 @@ const ExpenseForm = () => {
             type="number"
             min="0.01"
             step="0.01"
-            onChange={(event) => {
-              inputChangeHandler("amount", event.target.value);
-            }}
+            // onChange={(event) => {
+            //   inputChangeHandler("amount", event.target.value);
+            // }}
+            onChange={amountChangeHandler}
           />
         </div>
         <div className="new-expense__control">
@@ -85,7 +98,8 @@ const ExpenseForm = () => {
             type="date"
             min="2023-01-01"
             max="2024-12-31"
-            onChange={(event) => inputChangeHandler("date", event.target.value)}
+            // onChange={(event) => inputChangeHandler("date", event.target.value)}
+            onChange={dateChangeHandler}
           />
         </div>
       </div>
