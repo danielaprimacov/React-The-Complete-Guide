@@ -8,15 +8,15 @@ import "./Expenses.css";
 const Expenses = (props) => {
   const [filterValue, setFilterValue] = useState("2020");
 
-  let filterInfoText = "2021, 2022 & 2023";
+  // let filterInfoText = "2021, 2022 & 2023";
 
-  if (filterValue === "2021") {
-    filterInfoText = "2020, 2022 & 2023";
-  } else if (filterValue === "2022") {
-    filterInfoText = "2020, 2021 & 2023";
-  } else if(filterValue === "2023") {
-    filterInfoText = "2020, 2021 & 2022";
-  }
+  // if (filterValue === "2021") {
+  //   filterInfoText = "2020, 2022 & 2023";
+  // } else if (filterValue === "2022") {
+  //   filterInfoText = "2020, 2021 & 2023";
+  // } else if(filterValue === "2023") {
+  //   filterInfoText = "2020, 2021 & 2022";
+  // }
 
   const onSelectedFilterValueHandler = (filter) => {
     setFilterValue(filter);
@@ -32,7 +32,7 @@ const Expenses = (props) => {
           onSelectedFilterValue={onSelectedFilterValueHandler}
           selected={filterValue}
         />
-        <p>Data for years {filterInfoText} is hidden.</p>
+        {/* <p>Data for years {filterInfoText} is hidden.</p> */}
         <ExpenseItem
           title={props.items[0].title}
           amount={props.items[0].amount}
