@@ -6,7 +6,7 @@ import ExpensesFilter from "./ExpensesFilter";
 import "./Expenses.css";
 
 const Expenses = (props) => {
-  const [filterValue, setFilterValue] = useState("2020");
+  const [filterValue, setFilterValue] = useState("2023");
 
   // let filterInfoText = "2021, 2022 & 2023";
 
