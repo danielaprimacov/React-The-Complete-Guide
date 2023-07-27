@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./ResultsTableBody.css";
+import classes from "./ResultsTableBody.module.css";
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -11,7 +11,7 @@ const formatter = new Intl.NumberFormat("en-US", {
 
 const ResultsTableBody = (props) => {
   return (
-    <tbody>
+    <tbody className={classes.table_body}>
       {props.data.map((yearData) => (
         <tr key={yearData.year}>
           <td>{yearData.year}</td>

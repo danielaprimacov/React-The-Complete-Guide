@@ -1,10 +1,10 @@
 import React from "react";
 
-import "./ResultsTableHead.css";
+import classes from "./ResultsTableHead.module.css";
 
 const ResultsTableHead = () => {
   return (
-    <thead>
+    <thead className={classes.table_head}>
       <tr>
         <th>Year</th>
         <th>Total Savings</th>

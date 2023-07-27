@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./ResultsTable.css";
+import classes from "./ResultsTable.module.css";
 import ResultsTableHead from "./ResultsTableHead/ResultsTableHead";
 import ResultsTableBody from "./ResultsTableBody/ResultsTableBody";
 
@@ -9,7 +9,7 @@ const ResultsTable = (props) => {
   const initialInvestment = props.initialInvestment;
   
   return (
-    <table className="result">
+    <table className={classes.result}>
       <ResultsTableHead />
       <ResultsTableBody data={data} initialInvestment={initialInvestment} />
     </table>
