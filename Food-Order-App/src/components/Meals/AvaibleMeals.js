@@ -34,6 +34,7 @@ const BUNCH_OF_MEALS = [
 const AvaibleMeals = () => {
   const mealsList = BUNCH_OF_MEALS.map((meal) => (
     <MealItem
+      id={meal.id}
       key={meal.id}
       name={meal.name}
       description={meal.description}
