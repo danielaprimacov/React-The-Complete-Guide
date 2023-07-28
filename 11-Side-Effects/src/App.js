@@ -31,7 +31,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <MainHeader onLogout={logoutHandler} />
+      <MainHeader onLogout={ctx.onLogout} />
       <main>
         {!ctx.isLoggedIn && <Login />}
         {ctx.isLoggedIn && <Home />}
