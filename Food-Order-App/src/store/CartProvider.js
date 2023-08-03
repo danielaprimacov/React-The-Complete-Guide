@@ -3,7 +3,7 @@ import React, { useReducer } from "react";
 import CartContext from "./cart-contex";
 
 const defaultCartState = {
-  items: 0,
+  items: [],
   totalAmount: 0,
 };
 
