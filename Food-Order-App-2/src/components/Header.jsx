@@ -10,7 +10,7 @@ export default function Header() {
   const totalCartItems = cartCtx.items.reduce(
     (totalNumberOfItems, item) => {
       return totalNumberOfItems + item.quantity;
-    }, 0)
+    }, 0);
   
   return <header id="main-header">
     <div id="title">
