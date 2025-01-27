@@ -1,6 +1,13 @@
 {
   "opinions": [
     {
+      "id": 1737965483553,
+      "votes": 0,
+      "userName": "Daniela",
+      "title": "React Forms Actions",
+      "body": "Form Actions from React are great!"
+    },
+    {
       "id": 1,
       "userName": "Maximilian Schwarzmüller",
       "title": "Do yourself a favor and learn React!",
