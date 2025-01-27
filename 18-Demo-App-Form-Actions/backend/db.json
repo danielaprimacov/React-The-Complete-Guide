@@ -2,7 +2,7 @@
   "opinions": [
     {
       "id": 1737965483553,
-      "votes": 0,
+      "votes": 1,
       "userName": "Daniela",
       "title": "React Forms Actions",
       "body": "Form Actions from React are great!"
@@ -12,7 +12,7 @@
       "userName": "Maximilian Schwarzmüller",
       "title": "Do yourself a favor and learn React!",
       "body": "React is an amazing JavaScript library!\n\nDespite all it's shortcomings.",
-      "votes": 0
+      "votes": 1
     },
     {
       "id": 2,
