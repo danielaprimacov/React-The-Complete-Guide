@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import Cart from "./components/Cart/Cart";
 import Layout from "./components/Layout/Layout";
 import Products from "./components/Shop/Products";
-import Card from "./components/UI/Card";
 import Notification from "./components/UI/Notification";
 import { sendCartData, fetchCartData } from "./store/cart-actions";
 
