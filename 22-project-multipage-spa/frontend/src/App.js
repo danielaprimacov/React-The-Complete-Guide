@@ -1,5 +1,7 @@
 // Challenge / Exercise
 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 // 1. Add five new (dummy) page components (content can be simple <h1> elements)
 //    - HomePage
 //    - EventsPage
