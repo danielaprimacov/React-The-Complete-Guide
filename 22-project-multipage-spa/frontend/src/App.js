@@ -14,6 +14,7 @@ import EventsPage from "./pages/Events";
 import EventDetailPage from "./pages/EventDetail";
 import NewEventPage from "./pages/NewEvent";
 import EditEventPage from "./pages/EditEvent";
+import RootLayout from "./pages/Root";
 
 // 2. Add routing & route definitions for these five pages
 //    - / => HomePage
@@ -21,6 +22,20 @@ import EditEventPage from "./pages/EditEvent";
 //    - /events/<some-id> => EventDetailPage
 //    - /events/new => NewEventPage
 //    - /events/<some-id>/edit => EditEventPage
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      { index: true, element: <HomePage /> },
+      { path: "events", element: <EventsPage /> },
+      { path: "events/:eventId", element: <EventDetailPage /> },
+      { path: "events/new", element: <NewEventPage /> },
+      { path: "events/:eventId/edit", element: <EditEventPage /> },
+    ],
+  },
+]);
 
 // 3. Add a root layout that adds the <MainNavigation> component above all page components
 // 4. Add properly working links to the MainNavigation
@@ -31,7 +46,7 @@ import EditEventPage from "./pages/EditEvent";
 // BONUS: Add another (nested) layout route that adds the <EventNavigation> component above all /events... page components
 
 function App() {
-  return <RouterProvider />;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
