@@ -27,15 +27,14 @@ export async function loader({ request, params }) {
 
 export async function action({ params, request }) {
   const eventId = params.eventId;
-  const response = await fetch("http://locahost:8080/events/" + eventId, {
+  const response = await fetch("http://localhost:8080/events/" + eventId, {
     method: request.method,
   });
 
   if (!response.ok) {
-    throw new Response(
-      JSON.stringify({ message: "Could not fetch details for selected event" }),
-      { stauts: 500 }
-    );
+    throw new Response(JSON.stringify({ message: "Could not delete event." }), {
+      status: 500,
+    });
   }
   return redirect("/events");
 }
