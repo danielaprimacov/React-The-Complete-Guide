@@ -5,11 +5,17 @@ import Modal from "../UI/Modal.jsx";
 import EventForm from "./EventForm.jsx";
 import { createNewEvent } from "../../util/http.js";
 import ErrorBlock from "../UI/ErrorBlock.jsx";
+import { queryClient } from "../../util/http.js";
 
 export default function NewEvent() {
   const navigate = useNavigate();
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: createNewEvent,
+    // is executed only when the mutation successed
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["events"] }); // tells RQ that data is outdated
+      navigate("/events");
+    },
   });
 
   function handleSubmit(formData) {
