@@ -8,8 +8,8 @@ import { fetchEvents } from "../../util/http.js";
 export default function NewEventsSection() {
   const { data, isPending, isError, error } = useQuery({
     // data contains the response
-    queryKey: ["events"], // can be multiple values and different types
-    queryFn: fetchEvents, // returns a Promise
+    queryKey: ["events", { max: 3 }], // can be multiple values and different types
+    queryFn: ({ signal, queryKey }) => fetchEvents({ signal, ...queryKey[1] }), // returns a Promise
     staleTime: 5000, // controls after which time RQ will send a request
     // gcTime: 1000, // controls how long the data in the Cache will be kept around
   });
