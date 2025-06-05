@@ -1,3 +1,5 @@
+"use client";
+
 export default function ClientDemo({ children }) {
   console.log("ClientDemo rendered");
   return (
