@@ -14,7 +14,7 @@ export default function Modal({ title, children, onClose }) {
         }}
         initial="hidden" // initial state
         animate="visible"
-        exit="hidden" // the state when the element is removed from the DOM
+        exit={{ opacity: 0, y: 30 }} // the state when the element is removed from the DOM
         open
         className="modal"
       >
