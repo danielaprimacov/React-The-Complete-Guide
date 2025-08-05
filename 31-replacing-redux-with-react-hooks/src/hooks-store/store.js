@@ -5,8 +5,17 @@ let listeners = [];
 let actions = {};
 
 // Creating a Custom Hook
-const useStore = () => {
+export const useStore = () => {
   const setState = useState(globalState)[1]; // updating function
+
+  const dispatch = (actionIdentifier) => {
+    const newState = actions[actionIdentifier](globalState);
+    globalState = { ...globalState, ...newState };
+
+    for (const listener of listeners) {
+      listener(globalState);
+    }
+  };
 
   useEffect(() => {
     listeners.push(setState);
@@ -15,4 +24,14 @@ const useStore = () => {
       listeners = listeners.filter((li) => li !== setState);
     };
   }, [setState]);
+
+  return [globalState, dispatch];
+};
+
+export const initStore = (userActions, initialState) => {
+  if (initialState) {
+    globalState = { ...globalState, ...initialState };
+  }
+
+  actions = { ...actions, ...userActions };
 };
