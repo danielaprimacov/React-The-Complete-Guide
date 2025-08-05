@@ -10,7 +10,7 @@ import "./ProductItem.css";
 const ProductItem = (props) => {
   // const dispatch = useDispatch();
   // const toggleFav = useContext(ProductsContext).toggleFav;
-  const dispatch = useStore()[1];
+  const dispatch = useStore(false)[1];
 
   const toggleFavHandler = () => {
     // dispatch(toggleFav(props.id));
