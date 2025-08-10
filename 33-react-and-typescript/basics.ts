@@ -37,3 +37,13 @@ let people: Person[];
 let course: string | number  = "React - The Complete Guide";
 course = 123456;
 
+// Functions & types
+
+function add(a: number, b: number) {
+  return a + b;
+}
+
+// function does not return anything -> return value - void
+function printValue(value: any) {
+  console.log(value);
+}
