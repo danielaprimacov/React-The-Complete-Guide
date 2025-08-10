@@ -7,7 +7,7 @@
 let age: number;
 age = 12;
 
-let userName: string;
+let userName: string | string[];
 userName = "Max";
 
 let isInstructor: boolean;
@@ -34,5 +34,6 @@ let people: {
 
 // Type Inference
 
-let course = "React - The Complete Guide";
-// course = 123456;
+let course: string | number  = "React - The Complete Guide";
+course = 123456;
+
